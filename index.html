@@ -4,14 +4,23 @@
         <meta charset="utf-8">
 
         <title>Fast Reaction Game</title>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="style.css">
     </head>
 
     <body>
+        <div id="title" class="container">
+            <h1>Fast Reaction Game</h1>
+        </div>
+
         <div id="playerPerformance" class="container">
-            
+            Your average speed is <span id="avergeSpeed">4s</span>
         </div>
 
         <div id="instructions" class="container">
+            <h2>Instructions</h2>
             <ul>
                 <li>This game tests your reaction by measuring how fast you can click on the shape as it appears.</li>
                 
@@ -26,7 +35,7 @@
         <div id="actionButtons" class="container">
             <button id="startGame">Start Game</button>
 
-            <button class="endGame">End Game</button>
+            <button id="endGame">End Game</button>
         </div>
 
         <div id="activeRegion" class="container">
