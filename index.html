@@ -45,8 +45,14 @@
         <script type="text/javascript">
             var totalTime = 0;
             var numberOfClicks = 0;
-            var cycleStart;
-            var cycleEnd;
+            var cycleDuration = 0;
+            var cycleStart = 0;
+            var cycleEnd = 0;
+            var averageSpeed = 0;
+
+            function getTime(){
+                return new Date().getTime();
+            }
 
             function makeShape(){
                 var top = Math.floor(Math.random() * 326);
@@ -73,16 +79,29 @@
 
                 document.getElementById('activeRegion').style.display = "block";
 
+                document.getElementById('playerPerformance').style.display = "none";
+
                 makeShape();
+
+                cycleStart = getTime();
             }
 
             document.getElementById('shape').onclick = function(){
                 document.getElementById('shape').style.display = "none";
 
+                numberOfClicks++;
+
+                cycleEnd = getTime();
+
+                cycleDuration = cycleEnd - cycleStart;
+
+                totalTime += cycleDuration;
+
                 makeShape();
             }
             
             document.getElementById('endGame').onclick = function(){
+
                 document.getElementById('endGame').style.display = "none";
 
                 document.getElementById('instructions').style.display = "block";
