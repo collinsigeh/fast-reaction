@@ -16,7 +16,7 @@
         </div>
 
         <div id="playerPerformance" class="container">
-            Your average speed is <span id="avergeSpeed">4s</span>
+            Your average speed is <span id="averageSpeed">4s</span>
         </div>
 
         <div id="instructions" class="container">
@@ -101,7 +101,6 @@
             }
             
             document.getElementById('endGame').onclick = function(){
-
                 document.getElementById('endGame').style.display = "none";
 
                 document.getElementById('instructions').style.display = "block";
@@ -111,6 +110,17 @@
                 document.getElementById('activeRegion').style.display = "none";
 
                 document.getElementById('playerPerformance').style.display = "block";
+
+                if(numberOfClicks <= 0)
+                {
+                    document.getElementById('averageSpeed').innerHTML = "unkown. Play the game to find out.";
+                }
+                else
+                {
+                    averageSpeed = totalTime/numberOfClicks;
+
+                    document.getElementById('averageSpeed').innerHTML = averageSpeed + "clicks/secs.";
+                }
             }
         </script>
     </body>
