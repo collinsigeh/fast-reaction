@@ -43,7 +43,7 @@
         </div>
 
         <script type="text/javascript">
-        
+
             var totalTime = 0;
             var numberOfClicks = 0;
             var cycleDuration = 0;
@@ -53,6 +53,15 @@
             function getTime(){
 
                 return new Date().getTime();
+            }
+
+            function getRandomColor() {
+                var letters = '0123456789ABCDEF';
+                var color = '#';
+                for (var i = 0; i < 6; i++) {
+                    color += letters[Math.floor(Math.random() * 16)];
+                }
+                return color;
             }
 
             function makeShape(){
@@ -68,6 +77,7 @@
                 document.getElementById('shape').style.width = width + "px";
                 document.getElementById('shape').style.height = height + "px";
                 document.getElementById('shape').style.borderRadius = borderRadius + "%";
+                document.getElementById('shape').style.backgroundColor = getRandomColor();
                 
                 document.getElementById('shape').style.display = "block";
             }
